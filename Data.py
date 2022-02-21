@@ -44,7 +44,7 @@ Yeniden adlandırmak için bir dosya gönderin. Bot, dosyayı yeniden adlandıra
 
     # About Message
     ABOUT = """
-**About This Bot** 
+**Bot Hakkında** 
 
 Bu bot, telegramdaki dosyalarınızı yeniden adlandırma konusunda size yardımcı olacaktır.
 
