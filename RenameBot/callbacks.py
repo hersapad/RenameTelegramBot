@@ -43,22 +43,22 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         await bot.edit_message_text(
             chat_id=chat_id,
             message_id=message_id,
-            text="**Here's How to use me**\n" + Data.HELP,
+            text="**Bot Kullanımı**\n" + Data.HELP,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(Data.home_buttons),
         )
     elif query in ["add_tn", "change_tn"]:
         await callback_query.message.delete()
-        image_message = await bot.ask(callback_query.from_user.id, "Send a image to set as thumbnail",
+        image_message = await bot.ask(callback_query.from_user.id, "Küçük resmi ayarlamak için bir resim gönderin",
                                       filters=filters.photo)
-        await bot.send_message(callback_query.from_user.id, "Wait...Downloading and Saving...")
+        await bot.send_message(callback_query.from_user.id, "Lütfen bekleyiniz...")
         image = await image_message.download()
         binary = await image_to_binary(image)
         q = SESSION.query(Users).get(callback_query.from_user.id)
         q.thumbnail = binary
         q.thumbnail_status = True
         SESSION.commit()
-        await image_message.reply("Thumbnail Set !", quote=True)
+        await image_message.reply("Küçük resim ayarlandı !", quote=True)
         shutil.rmtree("downloads")
     elif query == "remove_tn":
         q = SESSION.query(Users).get(callback_query.from_user.id)
@@ -66,7 +66,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         q.thumbnail_status = False
         SESSION.commit()
         await callback_query.message.delete()
-        await bot.send_message(callback_query.from_user.id, "Thumbnail Removed !")
+        await bot.send_message(callback_query.from_user.id, "Küçük resim silindi !")
     elif query == "tn_status_change":
         q = SESSION.query(Users).get(callback_query.from_user.id)
         if q.thumbnail_status:
@@ -78,16 +78,16 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         SESSION.commit()
         await callback_query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("Change Thumbnail", callback_data="change_tn")],
-                [InlineKeyboardButton("Remove Thumbnail", callback_data="remove_tn")],
-                [InlineKeyboardButton(f"Thumbnail Status : {switch}", callback_data="tn_status_change")]
+                [InlineKeyboardButton("Küçük resmi değiştir", callback_data="change_tn")],
+                [InlineKeyboardButton("Küçük resmi sil", callback_data="remove_tn")],
+                [InlineKeyboardButton(f"Küçük resim : {switch}", callback_data="tn_status_change")]
             ])
         )
     elif query == "video_to_setting":
         q = SESSION.query(Users).get(callback_query.from_user.id)
         if q.video_to.lower() == "video":
-            q.video_to = "document"
-            now = "Document"
+            q.video_to = "dosya"
+            now = "Dosya"
         else:
             q.video_to = "video"
             now = "Video"
