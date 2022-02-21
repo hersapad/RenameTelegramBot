@@ -4,13 +4,13 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     # Start Message
     START = """
-Hey {}
+Merhaba! {}
 
 Welcome to {}
 
-You can use me to rename documents and files with certain other features. Use `/help` to learn how !
+Belgeleri ve diğer bazı özelliklere sahip dosyaları yeniden adlandırmak için beni kullanabilirsiniz.. Öğrenmek için `/help` yazın !
 
-By @StarkBots
+
     """
 
     # Home Button
@@ -49,7 +49,7 @@ Just send a document / video to start renaming. Then when asked, give the new na
     ABOUT = """
 **About This Bot** 
 
-A telegram rename bot by @StarkBots
+Telegram rename bot
 
 Source Code : [Click Here](https://github.com/StarkBotsIndustries/RenameTelegramBot)
 
