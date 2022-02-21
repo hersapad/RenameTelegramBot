@@ -6,7 +6,7 @@ class Data:
     START = """
 Merhaba! {}
 
-Hoşgeldiniz {}
+{} botuna hoşgeldiniz!
 
 Belgeleri ve diğer bazı özelliklere sahip dosyaları yeniden adlandırmak için beni kullanabilirsiniz.. Öğrenmek için `/help` yazın !
 
