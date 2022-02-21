@@ -16,10 +16,10 @@ async def must_join_channel(bot: Client, msg: Message):
                 chat_info = await bot.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
             await msg.reply(
-                f"You must join [this channel]({link}) to use this bot. After joining try again !",
+                f"Botu kullanmak için [Bu kanala]({link}) abone olmalısınız. Kanala katıldıktan sonra tekrar deneyin !",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("✨ Join Channel ✨", url=link)]
+                    [InlineKeyboardButton("✨ Kanala katıl ✨", url=link)]
                 ])
             )
             await msg.stop_propagation()
