@@ -6,7 +6,7 @@ class Data:
     START = """
 Merhaba! {}
 
-Welcome to {}
+Hoşgeldiniz {}
 
 Belgeleri ve diğer bazı özelliklere sahip dosyaları yeniden adlandırmak için beni kullanabilirsiniz.. Öğrenmek için `/help` yazın !
 
@@ -15,26 +15,23 @@ Belgeleri ve diğer bazı özelliklere sahip dosyaları yeniden adlandırmak iç
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")],
+        [InlineKeyboardButton(text="🏠 Ana sayfaya dön 🏠", callback_data="home")],
     ]
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
-        ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
-        [InlineKeyboardButton("🎨 Support Group 🎨", url="https://t.me/StarkBotsChat")],
+            InlineKeyboardButton("Nasıl kullanılır?", callback_data="help"),
+            InlineKeyboardButton("🎪 Hakkında 🎪", callback_data="about")
+        ]
     ]
 
     # Help Message
     HELP = """
-Just send a document / video to start renaming. Then when asked, give the new name for the file. The bot will download the file and upload with new name.
+Yeniden adlandırmak için bir dosya gönderin. Bot, dosyayı yeniden adlandıracaktır.
 
-1) To have a custom thumbnail on your file, add an 'jpg' image as thumbnail using /thumbnail command.
-2) By default, videos are uploaded as videos. To prompt the bot to upload video as document, use /settings to change settings.
+1) Dosyanıza küçük resim eklemek için bir resim gönderin ve /thumbnail komutu ile resmi yanıtlayın.
+2) Videolarınız standart olarak video formatında yüklenecektir. Bunu değiştirmek için /settings komutunu kullanın.
 
 ✨ **Available Commands** ✨
 
@@ -51,11 +48,4 @@ Just send a document / video to start renaming. Then when asked, give the new na
 
 Telegram rename bot
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/RenameTelegramBot)
-
-Framework : [Pyrogram](docs.pyrogram.org)
-
-Language : [Python](www.python.org)
-
-Developer : @StarkProgrammer
     """
