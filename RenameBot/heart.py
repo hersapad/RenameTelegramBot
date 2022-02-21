@@ -41,7 +41,7 @@ async def _rename(bot: Client, msg: Message):
         surely_question = await bot.send_message(
             msg.chat.id,
             f"Dosyayı '`{new_name}`' şeklinde adlandırmak istediğinize emin misiniz ? \n\nEğer yanıtınız evet ise, 'y' veya 'yes' ile, \ndeğilse, 'n' veya 'no' ile yanıtlayın.  \nIptal etmek için `/cancel` komutunu gönderin"
-            f"\n\n[To prevent spelling/typing mistakes.]"
+            f"\n\n[ Bu, yalnızca olası yazım hatalarını önlemek için sorulmaktadır. ]"
         )
         surely = await bot.listen(msg.chat.id, timeout=300, filters=filters.user(msg.from_user.id) & filters.text)
         # Cancel 2
