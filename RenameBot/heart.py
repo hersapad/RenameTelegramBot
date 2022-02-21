@@ -20,7 +20,7 @@ async def _rename(bot: Client, msg: Message):
     try:
         new_name_message = await bot.ask(
             msg.chat.id,
-            "Dosyanın yeni adını giriniz ! \n\n[İşlemi durdurmak için `/cancel` komutunu veriniz !]",
+            "Dosyanın yeni adını giriniz ! \n\nİşlemi durdurmak için `/cancel` komutunu veriniz !",
             filters=filters.user(msg.from_user.id) & filters.text,
         )
         # Cancel 1
