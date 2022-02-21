@@ -18,18 +18,18 @@ async def _thumbnail(_, msg: Message):
         thumbnail.name = "image.jpg"
         await msg.reply_photo(
             thumbnail,
-            caption="This is the current thumbnail",
+            caption="Mevcut küçük resim",
             reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("✨ Change Thumbnail ✨", callback_data="change_tn")],
-                    [InlineKeyboardButton("✨ Remove Thumbnail ✨", callback_data="remove_tn")],
-                    [InlineKeyboardButton(f"Thumbnail Status : {switch}", callback_data="tn_status_change")]
+                    [InlineKeyboardButton("✨ Küçük resmi değiştir ✨", callback_data="change_tn")],
+                    [InlineKeyboardButton("✨ Küçük resmi sil ✨", callback_data="remove_tn")],
+                    [InlineKeyboardButton(f"Küçük resim : {switch}", callback_data="tn_status_change")]
             ])
         )
     else:
         await msg.reply(
             "No Thumbnail Found",
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("✨ Add Thumbnail ✨", callback_data="add_tn")]
+                [InlineKeyboardButton("✨ Küçük resim ekle ✨", callback_data="add_tn")]
             ])
         )
     SESSION.close()
