@@ -33,19 +33,19 @@ Yeniden adlandırmak için bir dosya gönderin. Bot, dosyayı yeniden adlandıra
 1) Dosyanıza küçük resim eklemek için bir resim gönderin ve /thumbnail komutu ile resmi yanıtlayın.
 2) Videolarınız standart olarak video formatında yüklenecektir. Bunu değiştirmek için /settings komutunu kullanın.
 
-✨ **Available Commands** ✨
+✨ **Kullanılabilir Komutlar** ✨
 
-/thumbnail - Change thumbnail settings
-/settings - Change default settings
-/about - About The Bot
-/help - This Message
-/start - Start the Bot
+/thumbnail - Küçük resim ayarları
+/settings - Bot ayarları
+/about - Bot Hakkında
+/help - Yardım Mesajı
+/start - Botu Başlat
     """
 
     # About Message
     ABOUT = """
 **About This Bot** 
 
-Telegram rename bot
+Bu bot, telegramdaki dosyalarınızı yeniden adlandırma konusunda size yardımcı olacaktır.
 
     """
